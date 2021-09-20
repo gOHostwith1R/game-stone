@@ -1,17 +1,33 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import ReactDOM from 'react-dom';
+import App from "./components/App";
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import firebase from "firebase/compat";
+import 'firebase/firestore';
+
+
+firebase.initializeApp({
+    apiKey: "AIzaSyDVvoWyYNUoDj6f6GtWcVl46Z0kwzM5Sg4",
+    authDomain: "starry-app-325911.firebaseapp.com",
+    projectId: "starry-app-325911",
+    storageBucket: "starry-app-325911.appspot.com",
+    messagingSenderId: "886443028623",
+    appId: "1:886443028623:web:06c9787a2c858b5efec0fa",
+    measurementId: "G-WMB5Q3DE0R"
+});
+
+export const Context = createContext(null);
+
+const firestore = firebase.firestore();
+const auth = firebase.auth()
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <Context.Provider value={{
+        firebase,
+        firestore,
+        auth
+    }}>
+        <App />
+    </Context.Provider>,
+    document.getElementById('root'))

@@ -1,0 +1,54 @@
+.moves-button-first {
+    display: flex;
+    flex-direction: column;
+}
+
+.moves-button-second {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    margin-bottom: 20px;
+    width: 100px;
+}
+
+.game {
+    text-align: center;
+}
+
+.rules-hidden {
+    display: none;
+}
+
+.rules {
+    animation-name: menuOpen;
+    animation-duration: 1s;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.close {
+    width: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.modal-window {
+    position: relative;
+    display: flex;
+    border: 1px solid blue;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+}
+
+.hidden {
+    visibility: hidden;
+    border: 0;
+}

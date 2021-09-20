@@ -1,0 +1,23 @@
+.form-select {
+    width: 210px;
+}
+
+.form-control {
+    width: 415px;
+}
+
+.start-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 430px;
+    border: 1px solid black;
+}
+
+@media screen and (max-width: 415px){
+    .form-control {
+        width: 320px;
+    }
+
+}
